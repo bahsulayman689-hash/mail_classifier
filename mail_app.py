@@ -1,12 +1,11 @@
 import pandas as pd
 import numpy as np
 import joblib
-
 import streamlit as st
-
 import sys
 import re
- 
+import os
+from urllib.parse import quote
 
 def absolute_tokenizer(text):
     return re.findall(r'\w+|[\W\s]', text)
@@ -176,6 +175,15 @@ with st.sidebar:
     st.write("📍 The Gambia")
 
     st.write("💡 Passionate about AI & Machine Learning")
+    st.divider()
+        # Twitter/X Link
+    twitter_url = f"https://twitter.com{quote("Check out this live AI Spam Email Detector built by Sulayman Bah! Try it here: https://bah-mailclassifier.streamlit.app/")}"
+    # LinkedIn Link
+    linkedin_url = f"https://linkedin.com{quote("https://bah-mailclassifier.streamlit.app/")}"
+    
+    st.markdown(f"[🐦 Share on Twitter / X]({twitter_url})", unsafe_allow_html=True)
+    st.markdown(f"[💼 Share on LinkedIn]({linkedin_url})", unsafe_allow_html=True)
+
 with st.sidebar:
 
     st.subheader("🔗 Connect")
